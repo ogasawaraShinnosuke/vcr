@@ -7,6 +7,9 @@ module VCR
   module Normalizers
     # @private
     module Body
+      # 参考になりそう
+      ## Bodyがincludeされた時にフックし，ClassMethodsモジュールをExtendし，ClassMethodsモジュールのメソッドをレシーバの特異クラス（klass）へインクルードさせている
+      ### body_fromとかのインスタンスメソッドがレシーバの特異クラスにMix-inされ，レシーバのクラスメソッドのように利用可能
       def self.included(klass)
         klass.extend ClassMethods
       end
